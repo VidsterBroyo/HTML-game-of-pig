@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> <!-- Import jQuery -->
+        <script src="gameOfPig.js"></script>
+        <link href="gameOfPig.css" rel="stylesheet" type="text/css"/>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"/>
+        <link href='https://fonts.googleapis.com/css?family=Lato' rel='stylesheet'>
+        <link href="https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz@8..144&display=swap" rel="stylesheet">
+
+        <title>Game of Pig</title>
+    </head>
+
+    <body>
+        <h1 id="title">Game of Pig</h1>
+
+        <button id="holdButton"><i class="fa-solid fa-piggy-bank fa-lg"></i>HOLD</button>
+        <button id="rollButton"><i class="fa-solid fa-rotate fa-lg"></i>ROLL</button>
+        
+        <div id="p1div">
+            <h2 id="p1Heading">Player 1</h2>
+
+            <p id="p1Score">0</p>
+
+            <div class="scoreContainer">
+                <p>Current</p>
+                <p id="p1Current">0</p>
+            </div>
+        </div>
+
+
+        <div id="p2div">
+            <h2 id="p2Heading">Player 2</h2>
+
+            <p id="p2Score">0</p>
+
+            <div class="scoreContainer">
+                <p>Current</p>
+                <p id="p2Current">0</p>
+            </div>
+        </div>
+
+        <div id="diceContainer">
+            <img id="dice1" src="img/d1.svg">
+            <img id="dice2" src="img/d2.svg">
+        </div>
+
+        <h3 id="info">--</h3>
+
+    
+    </body>
+</html>
