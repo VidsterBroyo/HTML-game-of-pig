@@ -7,7 +7,6 @@ var die2
 var currentPlayer
 
 
-
 function hold(){
     if(currentPlayer){
         p2Score += currentRoundScore 
@@ -27,24 +26,30 @@ function hold(){
 }
 
 function roll(){
+    $("#dice1, #dice2").addClass( "shake" );
+
     die1 = Math.floor(Math.random() * 6) + 1 
     die2 = Math.floor(Math.random() * 6) + 1
 
-    $("#info").text("Dice rolled")
-    $("#dice1").attr("src","img/d"+die1+".svg");
-    $("#dice2").attr("src","img/d"+die2+".svg");
-
-    if(die1 == 1 || die2 == 1){
-        $("#info").text("Roll lost! Switching turns")
-        currentRoundScore = 0
-        $("#p"+(currentPlayer+1)+"Heading").css("color", "black")
-        currentPlayer = !currentPlayer
-        $("#p"+(currentPlayer+1)+"Heading").css("color", "white")
-    }
-    else{
-        currentRoundScore += die1 + die2
-        $("#p"+(currentPlayer+1)+"Current").text(currentRoundScore)
-    }
+    setTimeout(() => {
+            $("#dice1, #dice2").removeClass( "shake" );
+            $("#info").text("Dice rolled")
+            $("#dice1").attr("src","img/d"+die1+".svg");
+            $("#dice2").attr("src","img/d"+die2+".svg");
+        
+            if(die1 == 1 || die2 == 1){
+                $("#p"+(currentPlayer+1)+"Current").text("0")
+                $("#info").text("Roll lost! Switching turns")
+                currentRoundScore = 0
+                $("#p"+(currentPlayer+1)+"Heading").css("color", "black")
+                currentPlayer = !currentPlayer
+                $("#p"+(currentPlayer+1)+"Heading").css("color", "white")
+            }
+            else{
+                currentRoundScore += die1 + die2
+                $("#p"+(currentPlayer+1)+"Current").text(currentRoundScore)
+            }
+        }, 400);
 }
 
 
